@@ -1,0 +1,59 @@
+from tkinter import *
+from tkinter.ttk import*
+
+root= Tk()
+
+root=Tk()
+master=Tk()
+root.title("Login")
+
+root.geometry("600x800")
+
+root.config(background="red")
+
+user_name=Label(root, text="Email:                           ").place(x=120,y=60)
+
+user_password=Label(root, text="Password:                    ").place(x=120,y=100)
+
+btn=Button(root, text="Submit",background="white").place(x=180,y=450)
+
+
+user_sandwich=Label(root, text="What food would you like: A chicken sandwich, a BLT, a veg sandwich or nothing?").place(x=80,y=140)
+w=Spinbox(master, from_=1 , to=4).place(x=120,y=180)
+
+user_drink=Label(root, text="What drink would you like: Coca Cola, fanta, water or nothing?").place(x=80,y=220)
+w=Spinbox(master, from_=1 , to=4).place(x=120,y=260)
+
+user_drink=Label(root, text="What dessert would you like: ice cream, an ice lolly, chocolate cake or nothing?").place(x=80,y=300)
+w=Spinbox(master, from_=1 , to=4).place(x=120,y=340)
+
+progress = Progressbar(root, orient=HORIZONTAL,length=100, mode='determinate')
+
+def bar():
+    import time
+    progress['value'] = 20
+    root.update_idletasks()
+    time.sleep(1)
+
+    progress['value'] = 40
+    root.update_idletasks()
+    time.sleep(1) 
+
+    progress['value'] = 50
+    root.update_idletasks()
+    time.sleep(1)
+
+    progress['value'] = 60
+    root.update_idletasks()
+    time.sleep(1)
+
+    progress['value'] = 80
+    root.update_idletasks()
+    time.sleep(1)
+    progress['value'] = 100
+
+
+progress.pack(pady=10)
+
+Button(root, text='Start', command=bar).pack(pady=10)
+root.mainloop()
